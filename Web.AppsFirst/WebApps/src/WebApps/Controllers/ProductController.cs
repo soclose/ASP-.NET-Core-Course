@@ -15,5 +15,16 @@ namespace WebApps.Controllers
         {
             return View();
         }
+
+        public ActionResult Process([FromForm]PassData data)
+        {
+            ViewData["Name"] = data.Name;
+            return View();
+        }
+    }
+
+    public class PassData
+    {
+        public string Name { get; set; }
     }
 }
